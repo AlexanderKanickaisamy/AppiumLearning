@@ -1,0 +1,77 @@
+Manual testing
+Suite
+	scenarios
+		test cases
+			test steps
+
+TestNG
+Suite
+	test
+		class
+			method
+
+
+Cucumber
+Project
+	feature
+		scenario
+			steps
+
+Gherkin keywords
+	Given --> pre-conditions
+	When --> Steps to be performed
+	Then --> Expected result
+	And --> Supporting keyword for all
+	But --> Expected result for -ve cases
+	* --> wild card (any)
+
+Cucumber
+
+1. feature
+2. Step define
+3. execute it
+
+Maven
+src/main/java
+stepDef
+	StepDef.java
+	AppiumDriver driver;
+
+	@Given("Application is launched")
+	public void a() {
+	.....
+	}
+	@Given("I enter the username")
+	public void b() {
+	....
+	}
+	@Given("I enter the password")
+	public void c() {
+	...
+	}
+	@Given("I click login button")
+	public void d() {
+	...
+	}
+	@Given("Verify Home page is displayed")
+	public void e() {
+	.....
+	}
+src/main/resources
+src/test/java
+testRunner
+	Runner.java extends AbstractTestNGCucumberTests
+	@CucumberOptions(features="src/test/resources/features",glue="stepDef")
+	public class Runner extends AbstractTestNGCucumberTests{
+	}
+src/test/resources
+features
+	Feature1.feature
+	Feature: Login funtionality
+	Scenario: Login success
+	Given Application is launched
+	When I enter the username
+	And I enter the password
+	And I click login button
+	Then Verify Home page is displayed
+	

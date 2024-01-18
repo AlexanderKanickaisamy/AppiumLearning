@@ -1,0 +1,111 @@
+Manual testing
+Suite
+	scenarios
+		test cases
+			test steps
+
+TestNG
+Suite
+	test
+		class
+			method
+
+
+Cucumber
+Project
+	feature
+		scenario
+			steps
+
+Gherkin keywords
+	Given --> pre-conditions
+	When --> Steps to be performed
+	Then --> Expected result
+	And --> Supporting keyword for all
+	But --> Expected result for -ve cases
+	* --> wild card (any)
+
+Cucumber
+
+1. feature
+2. Step define
+3. execute it
+
+Maven
+src/main/java
+wrapper
+	GenericWrappers.java extends AbstractTestNGCucumberTests
+		ThreadLocal<AppiumDriver> driver;
+		launchApp(.....
+		......
+		driver.set(new AndroidDriver/iOSDriver......
+
+
+		enterValue(
+		driver.get().....
+
+pages
+	LoginPage.java extends GenericWrappers
+		public LoginPage() {
+		anyValidation.....
+		}
+
+		@Given("I enter the username")
+		public LoginPage enterUserName(String un) {
+		WebElement ele = driver.findElement(AppiumBy.Id("dsdg"));
+		enterValue(ele,un);
+		return this;
+		}
+
+		@Given("I enter the password")
+		public LoginPage enterPassword() {
+		...
+		return this;
+		}
+
+		@Given("I click login button for failure")
+		public LoginPage clickLoginForFailure() {
+		...
+		return new LoginPage();
+		}
+
+		@Given("I click login button")
+		public HomePage clickLoginForSuccess() {
+		...
+		return new HomePage();
+		}
+	HomePage.java extends GenericWrappers
+		public HomePage() {
+		anyValidation.....
+		}
+		@Given("Verify Home page is displayed")
+		public HomePage e() {
+		.....
+		return this;
+		}
+
+src/main/resources
+src/test/java
+testRunner
+	Runner.java extends AbstractTestNGCucumberTests
+	@CucumberOptions(features="src/test/resources/features",glue="pages")
+	public class Runner extends GenericWrappers{
+		@BeforeMethod
+		public void bm() {
+		launchApp(....);
+		}
+		@AfterMethod
+		public void am() {
+		closeApp(....);
+		}
+	}
+src/test/resources
+features
+	Feature1.feature
+	Feature: Login funtionality
+	Scenario: Login success
+	When I enter the username
+	And I enter the password
+	And I click login button
+	Then Verify Home page is displayed
+	

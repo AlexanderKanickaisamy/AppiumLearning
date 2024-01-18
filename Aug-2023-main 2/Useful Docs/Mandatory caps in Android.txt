@@ -1,0 +1,60 @@
+Scenario 1: Create a session with device
+platformName -- Android
+deviceName -- placeholder
+automationName -- UiAutomator2 (optional for Appium 1.X)
+
+Scenario 2: Create a session with device and install and launch new app which is not installed in device
+platformName -- Android
+deviceName -- placeholder
+automationName -- UiAutomator2 (optional for Appium 1.X)
+app -- path of the apk file
+
+Scenario 3: Create a session with device and launch app which is installed in device
+platformName -- Android
+deviceName -- placeholder
+automationName -- UiAutomator2 (optional for Appium 1.X)
+appPackage --
+appActivity -- 
+
+Scenario 4: Create a session with device and launch mobile web app
+platformName -- Android
+deviceName -- placeholder
+automationName -- UiAutomator2 (optional for Appium 1.X)
+browser -- Chrome
+
+Scenario 5: Create a session with device in parallel
+platformName -- Android
+deviceName -- placeholder
+automationName -- UiAutomator2 (optional for Appium 1.X)
+udid/platformVersion -- Need a parameter to differentiate between each device
+systemPort -- UiAutomator Client port (part of Appium Server)
+mjpegServerPort -- If screenshot/videos are captured
+
+Scenario 6: Create a session with device and install and launch new app which is not installed in device in parallel
+platformName -- Android
+deviceName -- placeholder
+automationName -- UiAutomator2 (optional for Appium 1.X)
+app -- path of the apk file
+udid/platformVersion -- Need a parameter to differentiate between each device
+systemPort -- UiAutomator Client port (part of Appium Server)
+mjpegServerPort -- If screenshot/videos are captured
+chromeDriverPort -- chromedriver.exe port (optional for native)
+
+Scenario 7: Create a session with device and launch app which is installed in device in parallel
+platformName -- Android
+deviceName -- placeholder
+automationName -- UiAutomator2 (optional for Appium 1.X)
+appPackage --
+appActivity --
+udid/platformVersion -- Need a parameter to differentiate between each device
+systemPort -- UiAutomator Client port (part of Appium Server)
+mjpegServerPort -- If screenshot/videos are captured
+chromeDriverPort -- chromedriver.exe port (optional for native)
+
+Scenario 8: Create a session with device and launch mobile web app
+platformName -- Android
+deviceName -- placeholder
+automationName -- UiAutomator2 (optional for Appium 1.X)
+browser -- Chrome
+udid/platformVersion -- Need a parameter to differentiate between each device
+chromeDriverPort -- chromedriver.exe port

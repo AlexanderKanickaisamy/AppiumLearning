@@ -1,0 +1,57 @@
+Scenario 1: Create a session with device
+platformName -- iOS
+deviceName -- Exact match of Simulator or real device
+automationName -- XCUITest
+
+Scenario 2: Create a session with device and install and launch new app which is not installed in device
+platformName -- iOS
+deviceName -- Exact match of Simulator or real device
+automationName -- XCUITest
+app -- path of the app/ipa/zip file
+
+Scenario 3: Create a session with device and launch app which is installed in device
+platformName -- iOS
+deviceName -- Exact match of Simulator or real device
+automationName -- XCUITest
+bundleId -- Bundle identifier provided by dev team
+
+Scenario 4: Create a session with device and launch mobile web app
+platformName -- iOS
+deviceName -- Exact match of Simulator or real device
+automationName -- XCUITest
+browser -- Safari
+
+Scenario 5: Create a session with device in parallel
+platformName -- iOS
+deviceName -- Exact match of Simulator or real device
+automationName -- XCUITest
+udid/platformVersion -- Need a parameter to differentiate between each device
+wdaLocalPort -- WDA Client port (part of Appium Server)
+mjpegServerPort -- If screenshot/videos are captured
+
+Scenario 6: Create a session with device and install and launch new app which is not installed in device in parallel
+platformName -- iOS
+deviceName -- Exact match of Simulator or real device
+automationName -- XCUITest
+udid/platformVersion -- Need a parameter to differentiate between each device
+wdaLocalPort -- WDA Client port (part of Appium Server)
+mjpegServerPort -- If screenshot/videos are captured
+app -- path of the apk file
+
+Scenario 7: Create a session with device and launch app which is installed in device in parallel
+platformName -- iOS
+deviceName -- Exact match of Simulator or real device
+automationName -- XCUITest
+udid/platformVersion -- Need a parameter to differentiate between each device
+wdaLocalPort -- WDA Client port (part of Appium Server)
+mjpegServerPort -- If screenshot/videos are captured
+bundleId -- Bundle identifier provided by dev team
+
+Scenario 8: Create a session with device and launch mobile web app
+platformName -- iOS
+deviceName -- Exact match of Simulator or real device
+automationName -- XCUITest
+browser -- Safari
+udid/platformVersion -- Need a parameter to differentiate between each device
+wdaLocalPort -- WDA Client port (part of Appium Server)
+mjpegServerPort -- If screenshot/videos are captured

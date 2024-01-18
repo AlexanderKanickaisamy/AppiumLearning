@@ -1,0 +1,80 @@
+Page Object Model
+
+Rules
+1. Each page should be separate 
+2. common wrapper
+3. each page to be extending my wrapper
+4. every action should be a separate method
+5. every method should have a return type and return to the page where it lands post method execution
+6. verify the page it has landed
+
+Maven
+src/main/java --> supporting files to run the TC
+wrapper
+	GenericWrappers.java
+		public AppiumDriver driver;
+		launchApp(.....
+		......
+	ProjectSpecificWrappers.java extends GenericWrappers
+		@BeforeMethod
+		public void bm() {
+		launchApp(....);
+		}
+		@AfterMethod
+		public void am() {
+		closeApp(....);
+		}
+		
+pages
+	LoginPage.java extends GenericWrappers
+		public LoginPage(AppiumDriver driver) {
+		this.driver = driver;
+		anyValidation.....
+		}
+
+		public LoginPage enterUserName(String un) {
+		WebElement ele = driver.findElement(AppiumBy.Id("dsdg"));
+		enterValue(ele,un);
+		return this;
+		}
+		public LoginPage enterPassword() {
+		...
+		return this;
+		}
+		public LoginPage clickLoginForFailure() {
+		...
+		return new LoginPage(driver);
+		}
+		public HomePage clickLoginForSuccess() {
+		...
+		return new HomePage(driver);
+		}
+	HomePage.java extends GenericWrappers
+		public HomePage(AppiumDriver driver) {
+		this.driver = driver;
+		anyValidation.....
+		}
+
+src/main/resources --> common files/resources that need to be used in src/main/java
+src/test/java --> TC
+testCases
+	TC001.java extends ProjectSpecificWrappers
+		@Test
+		public void runCode(){
+		new LoginPage(driver).enterUserName("sdf").enterPassword().clickLoginForSuccess();
+		}
+	TC002.java extends ProjectSpecificWrappers
+		@Test
+		public void runCode(){
+		new LoginPage(driver).enterUserName("sdf").enterPassword().clickLoginForFailure();
+		}
+src/test/resources --> common files/resources that need to be used in src/test/java
+
+
+
+
+
+
+
+
+
